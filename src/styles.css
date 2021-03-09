@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --light-red:#FF0000;
+    --dark-red:#CC0000;
+    --pokeblue:#3B4CCA;
+    --yellow: #FFDE00;
+    --yellow_dark: #B3A125;
+    --light_grey: #EFEFEF;
+    --grey: #969696;
+}

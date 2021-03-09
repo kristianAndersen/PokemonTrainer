@@ -1,0 +1,86 @@
+:root{
+        --normal: #A8A77A,
+        --fire: #EE8130,
+        --water: #6390F0,
+        --electric: #F7D02C,
+        --grass: #7AC74C,
+        --ice: #96D9D6,
+        --fighting: #C22E28,
+        --poison: #A33EA1,
+        --ground: #E2BF65,
+        --flying: #A98FF3,
+        --psychic: #F95587,
+        --bug: #A6B91A,
+        --rock: #B6A136,
+        --ghost: #735797,
+        --dragon: #6F35FC,
+        --dark: #705746,
+        --steel: #B7B7CE,
+        --fairy: #D685AD,
+    
+}
+body{
+    color: #222;
+   font-family: Arial;
+ }
+ .wrap {
+   margin-bottom: 2.5rem;
+   text-align: center;
+ }
+ 
+ .grid {
+   display: grid;
+   grid-gap: 1rem;
+   margin-bottom: 4rem;
+ }
+ @media (min-width: 550px) {
+   .grid {
+     grid-template-columns: 1fr 1fr;
+   }
+ }
+ @media (min-width: 850px) {
+   .grid {
+     grid-template-columns: 1fr 1fr 1fr;
+   }
+ }
+ @media (min-width: 1100px) {
+   .grid {
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+ }
+
+
+
+ 
+ .card {
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 8px;
+   padding: 1.5rem;
+ }
+ .card__title{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 auto;
+
+ }
+ .poke_image{
+     display: block;
+     width: 10rem;
+     height: 10rem;
+     margin: 0 auto;
+
+ }
+
+ .poke_image img{
+     height: 100%;
+ }
+
+ .poke_type{
+
+ }
+
+ .poke_type_dual{
+     
+}
