@@ -4,8 +4,10 @@ export interface PokemonData {
   height: number
   weight:number;
   moves:Array<any>;
-  sprites:Object;
+  sprites:object;
+  image:String;
   base_experience:number;
   stats:Array<any>;
   types:Array<any>;
+  typesLen:number
 }

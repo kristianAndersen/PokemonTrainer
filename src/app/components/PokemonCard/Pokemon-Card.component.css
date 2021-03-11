@@ -1,0 +1,44 @@
+ 
+ .card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .card_title{
+     display: block;
+     width: 100%;
+     text-align: center;
+     padding: 1rem;
+     margin: 0 auto;
+ 
+  }
+  .poke_image{
+      display: block;
+      width: 10rem;
+      height: 20rem;
+      margin: 0 auto;
+ 
+  }
+ 
+  .poke_image img{
+      height: 50%;
+  }
+ 
+  .poke_typeBadge{
+      width:10%;
+      height: 10%;
+      position: relative;
+      top:-4rem;
+      float: right;
+      
+  }
+ 
+  .poke_typeBadge img{
+     width:100%;
+     position: relative;
+     background-color:rgb(105, 105, 105);
+      padding: 0.5rem;
+      border-radius: 100%;
+      float: right;
+      margin: 0.2rem;
+ }

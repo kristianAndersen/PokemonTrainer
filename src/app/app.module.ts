@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import {NameInputComponent} from './components/NameInput/name-input.component'
 import { AppHeaderComponent } from './components/AppHeader/app-header.component';
 import {PokemonGridComponent} from './components/PokemonGrid/pokemon-grid.component'
-
+import {PokemonCardComponent} from './components/PokemonCard/Pokemon-Card.component'
 @NgModule({
   declarations: [
     AppComponent,    
     AppHeaderComponent,
     NameInputComponent,
     PokemonGridComponent,
+    PokemonCardComponent,
   ],
   imports: [
     BrowserModule,

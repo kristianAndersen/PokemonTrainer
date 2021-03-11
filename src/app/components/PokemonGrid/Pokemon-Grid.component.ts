@@ -3,7 +3,6 @@ import { PokemonData } from '../../model/PokemonModel'
 import {PokemonApi} from '../../services/Service'
 import { Observable} from 'rxjs';
 
-
 @Component({
     selector: 'pokemon-grid',
     templateUrl: 'Pokemon-Grid.component.html',
@@ -23,34 +22,16 @@ import { Observable} from 'rxjs';
 
       
         ngOnInit() {
-            this.load.fetchArtists().then(data => {
+            for (let i:number = 1; i < 10; i++) {
+            
+            this.load.fetchPokemons(i).then(data => {
+                data.image = data.sprites.other.dream_world.front_default;
+                data.typesLen=data.types;
                 this.pokemons.push(data);
               });
+            }
         }
 
 
-        /*
-        ngOnInit(): void {
-            this.load.getPokeData().subscribe(data => this.pokemondata = {
-                abilities:(data as any).abilities,
-                name:(data as any).name,
-                height: (data as any).height,
-                weight:(data as any).weight,
-                moves:(data as any).moves,
-                sprites:(data as any).sprites,
-                base_experience:(data as any).base_experience,
-                stats:(data as any).stats,
-                types:(data as any).types
-            });
-          }
-   */
 
     }
-
-    
-
-
-  
-  /**  this.pokemonAPIService.getPokemonData().subscribe((data: PokeAPI[]) => {
-          
-        this.Pokemons = data; */

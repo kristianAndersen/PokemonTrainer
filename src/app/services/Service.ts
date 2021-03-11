@@ -10,12 +10,12 @@ import { PokemonData } from '../model/PokemonModel';
 })
 export class PokemonApi {
   
-  private api:string= 'https://pokeapi.co/api/v2/pokemon/1';
+  private api:string= 'https://pokeapi.co/api/v2/pokemon/';
   
 constructor(private http: HttpClient) {}
-async fetchArtists() {
+async fetchPokemons(i:number) {
   try {
-    const data: any = await this.http.get(this.api).toPromise();
+    const data: any = await this.http.get(this.api+`${i}`).toPromise();
     return data;
   } catch (error) {
     console.error(`Error occurred: ${error}`);
