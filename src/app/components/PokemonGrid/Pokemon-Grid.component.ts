@@ -1,35 +1,26 @@
-import { Component,OnInit} from '@angular/core';
-import { PokemonData } from '../../model/PokemonModel'
-import {PokemonApi} from '../../services/Service'
-import { Observable} from 'rxjs';
-
+import { Component, OnInit } from '@angular/core';
+import { PokemonData } from '../../model/PokemonModel';
+import { PokemonApi } from '../../services/Service';
+import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'pokemon-grid',
-    templateUrl: 'Pokemon-Grid.component.html',
-    styleUrls: ['Pokemon-Grid.component.css'],
-
+  selector: 'pokemon-grid',
+  templateUrl: 'Pokemon-Grid.component.html',
+  styleUrls: ['Pokemon-Grid.component.css'],
 })
+export class PokemonGridComponent implements OnInit {
+  pokemons: PokemonData[] = [];
 
-  export class PokemonGridComponent implements OnInit{
-   
-    pokemons: PokemonData[] = [];
- 
-        constructor(private load: PokemonApi) { 
-       
-        }
-        
+  constructor(private load: PokemonApi) {}
 
+  ngOnInit() {
+    this.load.fetchArtists().then((data) => {
+      data.sprite = data.sprites.other.dream_world.front_default;
+      this.pokemons.push(data);
+    });
+  }
 
-      
-        ngOnInit() {
-            this.load.fetchArtists().then(data => {
-                this.pokemons.push(data);
-              });
-        }
-
-
-        /*
+  /*
         ngOnInit(): void {
             this.load.getPokeData().subscribe(data => this.pokemondata = {
                 abilities:(data as any).abilities,
@@ -44,13 +35,8 @@ import { Observable} from 'rxjs';
             });
           }
    */
+}
 
-    }
-
-    
-
-
-  
-  /**  this.pokemonAPIService.getPokemonData().subscribe((data: PokeAPI[]) => {
+/**  this.pokemonAPIService.getPokemonData().subscribe((data: PokeAPI[]) => {
           
         this.Pokemons = data; */
