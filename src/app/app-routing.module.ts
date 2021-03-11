@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NameInputComponent } from './components/NameInput/name-input.component';
 import { PokemonGridComponent } from './components/PokemonGrid/Pokemon-Grid.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: NameInputComponent,
+    component: LandingPageComponent,
   },
   {
     path: 'pokemon',
