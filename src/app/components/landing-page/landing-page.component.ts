@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
-  name = '';
-  placeholder = 'Please type in your name';
+  name: string = '';
+  placeholder: string = 'Please type in your name';
+  backgroundImage: string = 'url(../../../assets/landing-page-bg.jpg)';
 
   onKey(event: any) {
     // without type info

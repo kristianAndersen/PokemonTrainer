@@ -4,7 +4,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { NameInputComponent } from './components/NameInput/name-input.component';
 import { AppHeaderComponent } from './components/AppHeader/app-header.component';
 import { PokemonGridComponent } from './components/PokemonGrid/Pokemon-Grid.component';
@@ -20,6 +20,7 @@ import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.comp
     PokemonGridComponent,
     PokemonDetailComponent,
     PokemonCardComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,22 +14,21 @@
 }
 
 .inputwhitewrap {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 45rem;
-    height: 8rem;
-    background-color: #fcfcfc;
-    border-radius: 1rem 1rem 0 0;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 45rem;
+  height: 8rem;
+  background-color: #fcfcfc;
+  border-radius: 1rem 1rem 0 0;
 }
 
-
 .formwrap {
-    position: relative;
-    display: block;
-    width: 80%;
-    padding-top: 1rem;
-    margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 80%;
+  padding-top: 1rem;
+  margin: 0 auto;
 }
 
 input {
@@ -50,18 +49,18 @@ input {
 }
 
 input:focus {
-    outline:none;
+  outline: none;
 }
 .inputbtn {
-    right: 0.5rem;
-    position: relative;
-    float: right;
-    top: -3.5rem;
-    cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-    background-color: var(--light-red);
+  right: 0.5rem;
+  position: relative;
+  float: right;
+  top: -3.5rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: var(--light-red);
 }
 
 .inputbtn::after {
