@@ -1,1 +1,11 @@
-<div>i a card</div>
+<div class="card" [style]="typeColor(pokemon.types,pokemon.types.length)">
+   
+    <h3 class="card_title">{{pokemon.name}}</h3>
+    
+    <div class="poke_image">
+       
+        <img src={{pokemon.image}}/>
+      
+    </div>
+
+</div>

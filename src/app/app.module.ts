@@ -10,6 +10,7 @@ import { AppHeaderComponent } from './components/AppHeader/app-header.component'
 import { PokemonGridComponent } from './components/PokemonGrid/Pokemon-Grid.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { TypeColorService } from './services/type-color.service';
+import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TypeColorService } from './services/type-color.service';
     NameInputComponent,
     PokemonGridComponent,
     PokemonDetailComponent,
+    PokemonCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,17 @@
-<div style="text-align:center">
-    <h1>
-        Welcome from !
-    </h1>
 
-    <div *ngFor="let item of pokemons">
+
+<div class="grid">
+    <div  *ngFor="let pokemon of pokemons">
+        <pokemon-card [pokemon]="pokemon"> </pokemon-card>
+    </div >
+</div>
+        <!--
         {{item.name}}
 
      
-    
+     <div *ngIf="pokemon.types.length === 2 else">
+        Welcome!
+      </div>
    
 
         {{item.height}}
@@ -15,14 +19,14 @@
 <span *ngFor="let ability of item.abilities">
         {{ability.ability.name}}
 </span>
-   <!-- 
+
 <span *ngFor="let move of item.moves">  
         <br>{{move.move.name}}
 </span>
           
         
         {{item.base_experience}}
-         -->
+        
    <span *ngFor="let stat of item.stats">       
     {{stat.base_stat}}    
     {{stat.stat.name}}
@@ -33,8 +37,7 @@
     </div>
 
 
+ -->
 
-
-</div>
 
 <router-outlet></router-outlet>
