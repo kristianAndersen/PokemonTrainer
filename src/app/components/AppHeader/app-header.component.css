@@ -1,6 +1,28 @@
+@font-face {
+  font-family: 'Pokemon';
+  font-style: normal;
+  font-weight: normal;
+  src: local('../AppHeader/pokefont/PokemonSolid.woff'), url('../AppHeader/pokefont/PokemonSolid.woff') format('woff');
+  }
+  
 header {
-  width: 100vw;
-  height: 5vh;
-  background-color: var(--dark-red);
+  position: relative;
+  display: block;
+  width:100%;
+  height: 28vh;
   text-align: center;
+}
+
+
+.h1Class{
+  width: 100%;
+  position: relative;
+  padding-top: 2rem;
+    font-family:Pokemon;
+    color: white;
+    font-size: calc(1.5em + 1vw);
+    text-shadow: -0.2rem 0 var(--pokeblue), 0 0.2rem var(--pokeblue), 0.2rem 0 var(--pokeblue), 0 -0.2rem var(--pokeblue);
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+
+
 }

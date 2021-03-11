@@ -1,16 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-*,
-*:after,
-*:before {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --light-red:#FF0000;
     --dark-red:#CC0000;
@@ -19,4 +7,28 @@
     --yellow_dark: #B3A125;
     --light_grey: #EFEFEF;
     --grey: #969696;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%!important;
+    height: 100%!important;
+    background-color: #3B4CCA;
+}
+
+
+body{
+    background: url('./app/static-assets/pokemon_bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
