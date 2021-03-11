@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TypeColorService {
+  
   colours: { [unit: string]: string } = {
     normal: '#A8A77A',
     fire: '#EE8130',
@@ -26,7 +27,7 @@ export class TypeColorService {
   };
 
   constructor() {}
-  getColorFromTypes(types: Array<string>): string {
+  getColorFromTypes(types: Array<any>){
     if (types.length === 2) {
       return (
         'linear-gradient(to bottom,' +

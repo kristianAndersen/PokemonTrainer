@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { PokemonData } from 'src/app/model/PokemonModel';
+import { TypeColorService } from '../../services/type-color.service';
 
 @Injectable()
 
@@ -15,44 +15,32 @@ export class PokemonCardComponent{
     
    
 
-   
-
+    color: string = '#FFFFFF';
+    types: Array<string> = ['grass', 'poison'];
     
     @Input() pokemon:any;
 
-  
-    typeColor = function(arr:Array<any>,len:number) {
-        const colours:any = {
-            normal: '#A8A77A',
-            fire: '#EE8130',
-            water: '#6390F0',
-            electric: '#F7D02C',
-            grass: '#7AC74C',
-            ice: '#96D9D6',
-            fighting: '#C22E28',
-            poison: '#A33EA1',
-            ground: '#E2BF65',
-            flying: '#A98FF3',
-            psychic: '#F95587',
-            bug: '#A6B91A',
-            rock: '#B6A136',
-            ghost: '#735797',
-            dragon: '#6F35FC',
-            dark: '#705746',
-            steel: '#B7B7CE',
-            fairy: '#D685AD',
-        };
-        if(len===2){
+    @Output() showMeThePokemon: EventEmitter<any> = new EventEmitter();
 
-            return  "background:linear-gradient(to bottom," +colours[arr[0].type.name]+ 
-            " 40%," +
-            colours[arr[1].type.name]+
-            " 100%)";
-            
+    onClick(num:Array<any>) {
+      //move to detail and pass id
+      this.showMeThePokemon.emit(num);
+      console.log(num);
+    }
+
+    constructor(private typeColorService: TypeColorService) {}
+
+    ngOnInit(): void {
+     
+        if(this.pokemon.colorstypes.length===2){
+            let col1=this.pokemon.colorstypes[0].type.name  
+            let col2=this.pokemon.colorstypes[1].type.name 
+            this.color = this.typeColorService.getColorFromTypes([col1,col2]);
         }else{
-            return "background:"+colours[arr[0].type.name]
+            let col1=this.pokemon.colorstypes[0].type.name  
+            this.color = this.typeColorService.getColorFromTypes([col1]);
+
         }
-        
-    };
+      }
 
 }

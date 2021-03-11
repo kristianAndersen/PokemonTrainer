@@ -1,4 +1,5 @@
-<div class="card" [style]="typeColor(pokemon.types,pokemon.types.length)">
+<!--[style]="typeColor(pokemon.types,pokemon.types.length)"-->
+<div class="card" (click)="onClick(pokemon)" [style.background]="color">
    
     <h3 class="card_title">{{pokemon.name}}</h3>
     

@@ -8,4 +8,6 @@ export interface PokemonData {
   base_experience: number;
   stats: Array<any>;
   types: Array<any>;
+  colorstypes: Array<any>;
+  id:number;
 }
