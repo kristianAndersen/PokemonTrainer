@@ -1,0 +1,45 @@
+<div style="text-align:center">
+    <h1>
+        Welcome from !
+    </h1>
+
+    <div *ngFor="let item of pokemons">
+        {{item.name}}
+
+        <div *ngFor="let obj of item">
+            {{obj"}}
+         </div>
+
+                {{item.sprites?.other}}
+     
+    
+   
+
+        {{item.height}}
+        {{item.weight}}
+<span *ngFor="let ability of item.abilities">
+        {{ability.ability.name}}
+</span>
+   <!-- 
+<span *ngFor="let move of item.moves">  
+        <br>{{move.move.name}}
+</span>
+          
+        
+        {{item.base_experience}}
+         -->
+   <span *ngFor="let stat of item.stats">       
+    {{stat.base_stat}}    
+    {{stat.stat.name}}
+   </span>
+        <span *ngFor="let type of item.types">
+            {{type.type.name}}
+         </span>
+    </div>
+
+
+
+
+</div>
+
+<router-outlet></router-outlet>
