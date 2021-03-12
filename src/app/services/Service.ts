@@ -16,4 +16,6 @@ export class PokemonApi {
       console.error(`Error occurred: ${error}`);
     }
   }
+
+
 }

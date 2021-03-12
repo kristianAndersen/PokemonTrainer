@@ -1,5 +1,12 @@
 <div class="card" (click)="onClick(pokemon)" [style.background]="color">
    
+
+<div class="badgesWrap">
+    <div class="badges" *ngFor="let b of badge; let i = index">
+    <img src="{{b}}" alt="Pokemon type badge">
+    </div>
+</div>
+
     <h3 class="card_title">{{pokemon.name}}</h3>
     
     <div class="poke_image">

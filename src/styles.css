@@ -22,13 +22,13 @@
 html,body{
     width: 100%!important;
     height: 100%!important;
-    background-color: #3B4CCA;
+
 }
 
 
 body{
-    background: url('./app/static-assets/pokemon_bg.jpeg');
+    background: url('./app/static/pokemon_bg.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-attachment: fixed;
 }
