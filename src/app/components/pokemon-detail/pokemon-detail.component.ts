@@ -1,12 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { TypeColorService } from '../../services/type-color.service';
+import { ActivatedRoute } from '@angular/router';
+import {PokeDataService} from '../../services/poke-data.service'
+import { Subscription } from 'rxjs';
+
+
 @Component({
   selector: 'app-pokemon-detail',
   templateUrl: './pokemon-detail.component.html',
   styleUrls: ['./pokemon-detail.component.css'],
 })
-export class PokemonDetailComponent implements OnInit {
-  constructor(private typeColorService: TypeColorService) {}
+export class PokemonDetailComponent implements OnInit, OnDestroy {
+  
+  constructor(private typeColorService: TypeColorService,private route: ActivatedRoute,  
+    private pokedata:PokeDataService) {}
+
+  public pokemondeatil: Array<any>=['hep'];
+  
+  message: Array<any>=[];
+  subscription!: Subscription;
 
   //Mock
   name: string = 'Bulbasaur';
@@ -25,8 +37,17 @@ export class PokemonDetailComponent implements OnInit {
   abilities: Array<string> = ['overgrow', 'chlorophyll'];
   baseExperience: number = 64;
   color: string = '#FFFFFF';
+  
+
 
   ngOnInit(): void {
+    this.subscription = this.pokedata.currentMessage.subscribe(message => this.message = message)
+    console.log(this.subscription)
     this.color = this.typeColorService.getColorFromTypes(this.types);
+  }
+
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

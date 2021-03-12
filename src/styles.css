@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 :root {
     --light-red:#FF0000;
     --dark-red:#CC0000;
@@ -15,9 +17,15 @@
     box-sizing: border-box;
 }
 
-* {
+h1,h2,h3 {
     margin: 0;
     padding: 0;
+    margin-block-start: 1rem;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    writing-mode: horizontal-tb;
+
 }
 html,body{
     width: 100%!important;
@@ -31,4 +39,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: white;
 }
