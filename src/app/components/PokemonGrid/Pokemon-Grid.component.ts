@@ -10,19 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class PokemonGridComponent implements OnInit {
   pokemons: PokemonData[] = [];
-  
-  constructor(private load: PokemonApi) {}
 
-
+  constructor(private pokemonService: PokemonApi) {}
 
   ngOnInit() {
-    for (let i: number = 1; i < 10; i++) {
-      this.load.fetchPokemons(i).then((data) => {
-        data.image = data.sprites.other.dream_world.front_default;
-        data.colorstypes = data.types;
-        data.typesLen = data.types;
-        this.pokemons.push(data);
-      });
-    }
+    this.pokemons = this.pokemonService.getPokemons();
   }
 }
