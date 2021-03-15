@@ -27,7 +27,7 @@ export class TypeBadgeService {
     };
 
 constructor() { } 
-getBadgeTypes(types: Array<any>) {
+getBadgeFromTypes(types: Array<any>) {
         if (types.length === 2) {
             console.log([this.badge[types[0]], this.badge[types[1]]]);
             return [this.badge[types[0]], this.badge[types[1]]];
