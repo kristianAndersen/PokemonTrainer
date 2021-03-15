@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,8 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
   backgroundImage: string = 'url(../../../assets/landing-page-bg.jpg)';
 
-  constructor() {}
+  constructor(private router: Router, private userService: UserService) {}
 
-ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.userService.getName().subscribe((name: string | null) => {
+      if (name) {
+        this.router.navigate(['/grid']);
+      }
+    });
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'name-input',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./name-input.component.css'],
 })
 export class NameInputComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userService: UserService) {}
   name: string = '';
   placeholder: string = 'Please type in your name';
   onKey(event: any) {
@@ -15,7 +16,7 @@ export class NameInputComponent {
   }
 
   onSubmit() {
-    localStorage.setItem('name', this.name);
+    this.userService.setName(this.name);
     this.router.navigate(['/grid']);
   }
 }
