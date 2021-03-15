@@ -28,13 +28,11 @@ export class TypeBadgeService {
   constructor() {}
   getBadgeFromTypes(types: Array<any>) {
     if (types.length === 2) {
-  
+
       return [this.badge[types[0]], this.badge[types[1]]];
     } else {
-     
+
       return [this.badge[types[0]]];
     }
   }
-
-  
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TypeColorService } from '../../services/type-color.service';
 import { TypeBadgeService } from '../../services/type-badge.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,56 +14,42 @@ import { Observable, BehaviorSubject } from 'rxjs';
   styleUrls: ['./pokemon-detail.component.css'],
 })
 export class PokemonDetailComponent implements OnInit {
-  // pokemonId: string = '0';
+  @Input()  badge: Array<String> = ['hep', 'pep'];
+
 
   constructor(
-    private pokemonService: PokemonApi,
     private pokemonDetailService: PokemonDetailService,
     private typeColorService: TypeColorService,
     private typeBadgeService: TypeBadgeService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute) { }
 
-  pokemonId = this.route.snapshot.paramMap.get('id') as string;
   pokemon = this.router.getCurrentNavigation()?.extras.state as PokemonData;
-  // as PokemonData;
+  pokemonId = this.route.snapshot.paramMap.get('id') as string;
 
-  // name: string = this.pokemon.name;
-  // sprite: string = this.pokemon.image;
-
-  // hp: number = 55;
-  // attack: number = 49;
-  // defense: number = 49;
-  // specialAttack: number = 65;
-  // specialDefense: number = 65;
-  // speed: number = 45;
-  // height: number = 7;
-  // weight: number = 69;
-  // moves: Array<string> = ['vine-whip', 'body-slam', 'tackle'];
-  // abilities: Array<string> = ['overgrow', 'chlorophyll'];
-  // baseExperience: number = 64;
   color: string = '#FFFFFF';
-  badge: Array<String> = ['hep', 'pep'];
+ 
 
-  
   ngOnInit(): void {
 
-    if (this.pokemon === undefined) {
+    console.log(this.pokemon)
 
+    if (this.pokemon === undefined) {
+      console.log('cow')
       this.pokemonDetailService.getPokemon(Number(this.pokemonId)).subscribe(
-        pokemon => {this.pokemon =  pokemon;
-          //quick bad fix
+        pokemon => {
+          this.pokemon = pokemon;
+          //quick fix
           this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
           this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
         });
 
+    }
 
-    }
-      this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
-      this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
-    }
+    this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
+    this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
   }
+}
 
 
 

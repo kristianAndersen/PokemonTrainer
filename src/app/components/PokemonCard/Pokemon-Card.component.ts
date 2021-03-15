@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 @Component({
-  selector: 'pokemon-card',
+  selector: 'app-pokemon-card',
   templateUrl: './Pokemon-Card.component.html',
   styleUrls: ['./Pokemon-Card.component.css'],
 })

@@ -12,6 +12,8 @@ import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.comp
 import { CommonModule } from "@angular/common";
 import { PokemonDetailService } from './services/Pokemon-Detail.service';
 import { TypeBadgeService } from './services/type-badge.service';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { TypeBadgeService } from './services/type-badge.service';
     PokemonGridComponent,
     PokemonCardComponent,
     LandingPageComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { TypeBadgeService } from './services/type-badge.service';
     HttpClientJsonpModule,
     CommonModule
   ],
-  providers: [TypeColorService,PokemonDetailService,TypeBadgeService],
+  providers: [TypeColorService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
