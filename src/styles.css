@@ -8,7 +8,13 @@
     --light_grey: #EFEFEF;
     --grey: #969696;
 }
-
+@font-face {
+    font-family: 'Pokemon';
+    font-style: normal;
+    font-weight: normal;
+    src: local('../src/assets/pokefont/PokemonSolid.woff'), url('../src/assets/pokefont/PokemonSolid.woff') format('woff');
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *,
 *:after,
 *:before {
@@ -31,4 +37,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
 }

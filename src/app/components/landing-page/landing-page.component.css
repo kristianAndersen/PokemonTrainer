@@ -10,7 +10,9 @@
   min-height: 100%;
 }
 
-h1 {
-  text-align: center;
+p{
+text-align: center;
   padding: 20px;
+  font-weight: bolder;
+  font-size: 2rem;
 }

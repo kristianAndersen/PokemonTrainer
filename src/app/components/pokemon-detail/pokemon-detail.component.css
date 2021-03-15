@@ -1,4 +1,10 @@
+.wrap{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +16,7 @@
   border: 1px solid transparent;
   border-radius: 8px;
   color: white;
+
 }
 
 .moveList {
@@ -47,6 +54,8 @@ td {
   align-self: center;
 }
 h1 {
+  font-family: pokemon;
+  letter-spacing: 0.3rem;
   font-size: 35px;
   margin: 10px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -56,7 +65,16 @@ h2 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 5px;
 }
-
+.imageWrap{
+  display: flex;
+  justify-content: center;
+  height: 70%;
+  width: auto;
+}
+.imageWrap img{
+  height: 90%;
+  width: auto;
+}
 .image {
   padding: 10px;
   margin: auto;
