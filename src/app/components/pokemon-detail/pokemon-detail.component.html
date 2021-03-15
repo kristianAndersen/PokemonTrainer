@@ -1,33 +1,33 @@
 <div class="container shadow" [style.background]="color">
-    <div class="header"><h1>{{name}}</h1></div>
-    <img class="image" [src]="sprite" >
+    <div class="header"><h1>{{pokemon.name}}</h1></div>
+    <img class="image" [src]="pokemon.image" >
     <div class="detail-box shadow" >
         <div class="stats">
             <h2>Base Stats</h2>
             <table style="padding: 5px;">
                 <tr>
                     <th>HP</th>
-                    <td>{{hp}}</td>
+                    <td>{{pokemon.stats.hp}}</td>
                 </tr>
                 <tr>
                     <th>Attack</th>
-                    <td>{{attack}}</td>
+                    <td>{{pokemon.stats.attack}}</td>
                 </tr>
                 <tr>
                     <th>Defense</th>
-                    <td>{{defense}}</td>
+                    <td>{{pokemon.stats.defense}}</td>
                 </tr>
                 <tr>
                     <th>Special Attack</th>
-                    <td>{{specialAttack}}</td>
+                    <td>{{pokemon.stats.special_attack}}</td>
                 </tr>
                 <tr>
                     <th>Special Defense</th>
-                    <td>{{specialDefense}}</td>
+                    <td>{{pokemon.stats.special_defense}}</td>
                 </tr>
                 <tr>
                     <th>Speed</th>
-                    <td>{{speed}}</td>
+                    <td>{{pokemon.stats.speed}}</td>
                 </tr>
             </table>
         </div>
@@ -36,27 +36,27 @@
             <table style="padding: 5px;">
                 <tr>
                     <th>Base XP:</th>
-                    <td>{{baseExperience}}</td>
+                    <td>{{pokemon.base_experience}}</td>
                 </tr>
                 <tr>
                     <th>Weight</th>
-                    <td>{{weight}}</td>
+                    <td>{{pokemon.weight}}</td>
                 </tr>
                 <tr>
                     <th>Height</th>
-                    <td>{{height}}</td>
+                    <td>{{pokemon.height}}</td>
                 </tr>
             </table>
              <h3>Abilities:</h3>
-                <p *ngFor="let ability of abilities; index as i">
+                <p *ngFor="let ability of pokemon.abilities; index as i">
                     {{ability}}
                 </p>
         </div>
     </div>
     <div class="moveList">
         <h2>Moves</h2>
-        <span *ngFor="let move of moves; index as i">
-            {{move}}<span *ngIf="i != moves.length-1">,</span>
+        <span *ngFor="let move of pokemon.moves; index as i">
+            {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
         </span>
     </div>
 </div>

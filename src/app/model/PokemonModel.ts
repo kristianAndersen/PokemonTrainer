@@ -1,13 +1,21 @@
 export interface PokemonData {
-  abilities: Array<any>;
+  abilities: Array<string>;
   name: string;
   height: number;
   weight: number;
-  moves: Array<any>;
-  sprite: string;
+  moves: Array<string>;
+  image: string;
   base_experience: number;
-  stats: Array<any>;
-  types: Array<any>;
-  colorstypes: Array<any>;
-  id:number;
+  stats: Stats;
+  types: Array<string>;
+  id: number;
+}
+
+interface Stats {
+  hp: number;
+  attack: number;
+  defense: number;
+  special_attack: number;
+  special_defense: number;
+  speed: number;
 }
