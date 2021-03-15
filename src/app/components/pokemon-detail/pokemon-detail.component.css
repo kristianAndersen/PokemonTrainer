@@ -34,7 +34,7 @@ th {
   text-align: left;
 }
 
-table#child2 {
+table #child2 {
   background: cyan;
   table-layout: fixed;
   width: 100%;
@@ -108,4 +108,31 @@ h2 {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.badgesWrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3rem;
+  height: 2.5rem;
+
+}
+
+.badges {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  float: right;
+  margin-left: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 100%;
+}
+
+.badges>img {
+  height: 100%;
+  width: auto;
+  background-color: var(--yellow_dark);
+  padding: 0.5rem;
+  border-radius: 100%;
 }

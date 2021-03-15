@@ -10,10 +10,11 @@ import { PokemonApi } from '../../services/Service';
 })
 export class PokemonGridComponent implements OnInit {
   pokemons: PokemonData[] = [];
+  pokemonAmount: number = 101;
 
   constructor(private pokemonService: PokemonApi) {}
 
   ngOnInit() {
-    this.pokemons = this.pokemonService.getPokemons();
+    this.pokemons = this.pokemonService.getPokemons(this.pokemonAmount,false);
   }
 }

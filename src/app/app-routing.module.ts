@@ -10,7 +10,7 @@ const routes: Routes = [
     component: LandingPageComponent,
   },
   {
-    path: 'pokemon',
+    path: 'pokemon/:id',
     component: PokemonDetailComponent,
   },
   {

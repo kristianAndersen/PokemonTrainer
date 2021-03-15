@@ -8,32 +8,37 @@ import { PokemonData } from '../model/PokemonModel';
 export class PokemonApi {
   private api: string = 'https://pokeapi.co/api/v2/pokemon/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   pokemons: PokemonData[] = [];
-  pokemonAmount: number = 101;
 
-  getPokemons(): PokemonData[] {
+  getPokemons(pokemonAmount:number, detail:boolean): PokemonData[] {
     if (this.pokemons.length === 0) {
-      for (let i = 1; i <= this.pokemonAmount; i++) {
-        this.fetchPokemon(i);
+
+      if(detail === true){
+        this.fetchPokemon(pokemonAmount);
+      }else{
+        for (let i = 1; i <= pokemonAmount; i++) {
+          this.fetchPokemon(i);
+      }
       }
     }
     return this.pokemons;
   }
 
-  async fetchPokemon(id: number) {
+public fetchPokemon(id: number) {
     try {
-      const data: any = await this.http
+      const data: any = this.http
         .get(this.api + `${id}`)
         .subscribe((res: any) => {
+
           res.image = res.sprites.other.dream_world.front_default;
           res.types = res.types.map((type: any) => {
             return type.type.name;
           });
           res.stats.forEach((data: any) => {
-            if (data.stat.name == 'special-attack') {
+            if (data.stat.name === 'special-attack') {
               res.stats.special_attack = data.base_stat;
-            } else if (data.stat.name == 'special-defense') {
+            } else if (data.stat.name === 'special-defense') {
               res.stats.special_defense = data.base_stat;
             } else {
               res.stats[data.stat.name] = data.base_stat;

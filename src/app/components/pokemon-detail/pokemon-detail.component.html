@@ -1,11 +1,21 @@
-<div class="wrap">
 <div class="container shadow" [style.background]="color">
-    <div class="header"><h1>{{pokemon.name}}</h1></div>
-    <div class="imageWrap">
-        <img [src]="pokemon.image" >
+    <div class="header">
+        <h1>{{pokemon.name}}</h1>
+        <div class="badgesWrap">
+
+            <div class="badges" *ngFor="let b of badge; let i = index">
+                <img src="{{b}}" alt="Pokemon type badge">
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="detail-box shadow" >
+    <div class="imageWrap">
+        <img [src]="pokemon.image">
+    </div>
+
+    <div class="detail-box shadow">
         <div class="stats">
             <h2>Base Stats</h2>
             <table style="padding: 5px;">
@@ -51,10 +61,10 @@
                     <td>{{pokemon.height}}</td>
                 </tr>
             </table>
-             <h3>Abilities:</h3>
-                <p *ngFor="let ability of pokemon.abilities; index as i">
-                    {{ability}}
-                </p>
+            <h3>Abilities:</h3>
+            <p *ngFor="let ability of pokemon.abilities; index as i">
+                {{ability}}
+            </p>
         </div>
     </div>
     <div class="moveList">
@@ -63,5 +73,4 @@
             {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
         </span>
     </div>
-</div>
 </div>

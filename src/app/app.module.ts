@@ -7,9 +7,11 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NameInputComponent } from './components/NameInput/name-input.component';
 import { AppHeaderComponent } from './components/AppHeader/app-header.component';
 import { PokemonGridComponent } from './components/PokemonGrid/Pokemon-Grid.component';
-import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { TypeColorService } from './services/type-color.service';
 import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.component';
+import { CommonModule } from "@angular/common";
+import { PokemonDetailService } from './services/Pokemon-Detail.service';
+import { TypeBadgeService } from './services/type-badge.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,6 @@ import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.comp
     AppHeaderComponent,
     NameInputComponent,
     PokemonGridComponent,
-    PokemonDetailComponent,
     PokemonCardComponent,
     LandingPageComponent,
   ],
@@ -26,8 +27,9 @@ import { PokemonCardComponent } from './components/PokemonCard/Pokemon-Card.comp
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    CommonModule
   ],
-  providers: [TypeColorService],
+  providers: [TypeColorService,PokemonDetailService,TypeBadgeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

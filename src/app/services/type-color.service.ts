@@ -26,7 +26,7 @@ export class TypeColorService {
   };
 
   constructor() {}
-  getColorFromTypes(types: Array<string>) {
+  getColorFromTypes = (types: Array<string>) => {
     if (types.length === 2) {
       return (
         'linear-gradient(to bottom,' +

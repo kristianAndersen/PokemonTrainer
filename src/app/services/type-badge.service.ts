@@ -26,27 +26,13 @@ export class TypeBadgeService {
         fairy: './assets/badges/icons/fairy.svg',
     };
 
-constructor() { } 
-getBadgeFromTypes(types: Array<any>) {
+constructor() { }
+getBadgeFromTypes = (types: Array<string>) => {
         if (types.length === 2) {
-            console.log([this.badge[types[0]], this.badge[types[1]]]);
             return [this.badge[types[0]], this.badge[types[1]]];
 
         } else {
-            console.log('1');
             return [this.badge[types[0]]];
         }
     }
-
-    /* getBadgeTypes(types: Array<any>){
-       if (types.length === 2) {
-   
-         return  'url('+this.badge[types[0]]+'),url('+this.badge[types[1]]+')';
-     
-       } else {
-           console.log("1")
-           return  'url('+this.badge[types[0]]+')'
-       }
-     }
-     */
 }

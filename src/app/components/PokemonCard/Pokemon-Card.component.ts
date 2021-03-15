@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class PokemonCardComponent implements OnInit{
 
+  id:number=0;  
   color: string = '#FFFFFF';
   types: Array<string> = ['grass', 'poison'];
   badge: Array<string> = ['grass', 'poison'];
@@ -23,9 +24,11 @@ export class PokemonCardComponent implements OnInit{
   @Output() showMeThePokemon: EventEmitter<any> = new EventEmitter();
 
   onClick(pokemon: PokemonData) {
-    //move to detail and pass id
-    this.showMeThePokemon.emit(pokemon);
-    this.router.navigate(['/pokemon'], { state: pokemon });
+     this.id = pokemon.id;
+    // move to detail and pass id
+     this.showMeThePokemon.emit(pokemon);
+     this.router.navigate([`/pokemon/${this.id}`], { state: pokemon });
+
   }
 
   constructor(
