@@ -14,9 +14,12 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
   
   constructor(private typeColorService: TypeColorService,private route: ActivatedRoute,  
     private pokedata:PokeDataService) {}
+  
+  public pokemonID: string = 'this pokemon has ID number=';
 
   public pokemondeatil: Array<any>=['hep'];
   
+  //get data from pokemon card component
   message: Array<any>=[];
   subscription!: Subscription;
 
@@ -41,6 +44,8 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    this.pokemonID = `pokemon with Book Id of ${this.route.snapshot.paramMap.get('id')}`;
+
     this.subscription = this.pokedata.currentMessage.subscribe(message => this.message = message)
     console.log(this.subscription)
     this.color = this.typeColorService.getColorFromTypes(this.types);

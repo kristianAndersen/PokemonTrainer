@@ -19,7 +19,7 @@ export class PokemonGridComponent implements OnInit {
     for (let i: number = 1; i < 10; i++) {
       this.load.fetchPokemons(i).then((data) => {
 
-        //data.sort((a:any, b:any) => (a.id > b.id) ? 1 : -1)
+
         data.image = data.sprites.other.dream_world.front_default;
         data.colorstypes = data.types;
         data.typesLen = data.types;
