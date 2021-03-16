@@ -2,6 +2,12 @@
 
 A simple Pokédex built with Angular 11 and TypeScript.
 
+Team: Dan Tomicic & Kristian Andersen
+
+A simple Pokédex built with Angular 11 and TypeScript.
+
+[Try Pokemon yo here ](https://pokemonyo.vercel.app/) 
+
 Project scope:
 
 - use the [pokeapi](https://pokeapi.co/) to display pokemons with their avatars.
