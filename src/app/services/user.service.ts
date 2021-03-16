@@ -63,6 +63,13 @@ export class UserService {
     return this.name.asObservable();
   }
 
+  isLoggedIn() {
+    if (localStorage.getItem('name')) {
+      return true;
+    }
+    return false;
+  }
+
   logOut() {
     localStorage.clear();
     this.name.next('');
