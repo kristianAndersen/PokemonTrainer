@@ -12,6 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'pokemon/:id',
+    canActivate: [OnlyLoggedInUsersGuard],
     component: PokemonDetailComponent,
   },
   {
