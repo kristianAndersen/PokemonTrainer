@@ -57,7 +57,7 @@ body{
    border-radius: 8px;
    padding: 1.5rem;
  }
- .card__title{
+ .card_title{
     display: block;
     width: 100%;
     text-align: center;
@@ -68,19 +68,30 @@ body{
  .poke_image{
      display: block;
      width: 10rem;
-     height: 10rem;
+     height: 20rem;
      margin: 0 auto;
 
  }
 
  .poke_image img{
-     height: 100%;
+     height: 50%;
  }
 
- .poke_type{
-
- }
-
- .poke_type_dual{
+ .poke_typeBadge{
+     width:10%;
+     height: 10%;
+     position: relative;
+     top:-4rem;
+     float: right;
      
+ }
+
+ .poke_typeBadge img{
+    width:100%;
+    position: relative;
+    background-color:rgb(105, 105, 105);
+     padding: 0.5rem;
+     border-radius: 100%;
+     float: right;
+     margin: 0.2rem;
 }

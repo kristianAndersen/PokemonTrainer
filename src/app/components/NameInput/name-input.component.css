@@ -1,72 +1,124 @@
 .inputwrap {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 45rem;
-    height: 6rem;
-    top:-10rem;
-    background-color: var(--yellow);
-    border-radius: 1rem;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
-
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 45rem;
+  height: 6rem;
+  top: 3rem;
+  background-color: #ffd622;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .inputwhitewrap {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 45rem;
-    height: 8rem;
-    background-color: #fcfcfc;
-    border-radius: 1rem 1rem 0 0;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 45rem;
+  height: 8rem;
+  background-color: #fcfcfc;
+  border-radius: 1rem 1rem 0 0;
 }
 
-
 .formwrap {
-    position: relative;
-    display: block;
-    width: 80%;
-    padding-top: 1rem;
-    margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 80%;
+  padding-top: 1rem;
+  margin: 0 auto;
 }
 
 input {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background:var(--light_grey);
-    border: 0.2rem solid var(--pokeblue);
-    font-size: 1.4em;
-    border-radius: 4rem;
-    margin: 0 auto;
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2.5rem;
-    color: #000;
-   
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--light_grey);
+  border: 0.2rem solid var(--pokeblue);
+  font-size: calc(1.4em+1vw);
+  border-radius: 4rem;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2.5rem;
+  color: #000;
 }
 
 input:focus {
-    outline:none;
+  outline: auto;
 }
 .inputbtn {
-    right: 0.5rem;
-    position: relative;
-    float: right;
-    top: -3.5rem;
-    cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-    background-color: var(--light-red);
+  display: flex;
+  right: 0.5rem;
+  position: relative;
+  float: right;
+  top: -3.5rem;
+  color: #f0f0f0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 35px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #ee1515;
 }
 
 .inputbtn::after {
-content: "➡";
-font-size: 3rem;
-position: absolute;
-left: 0.4rem;
-top:-0.1rem;
-color: var(--light_grey);
+  font-size: 3rem;
+  left: 0.4rem;
+  top: -0.1rem;
+  color: var(--light_grey);
+}
+
+@media (max-width: 320px) {
+  .inputbtn {
+    top: -3.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .inputbtn::after {
+    top: 0rem;
+    font-size: 2.6rem;
+  }
+  .inputwrap {
+    width: 99%;
+  }
+  .inputwhitewrap {
+    width: 99%;
+  }
+}
+@media (max-width: 768px) {
+  .inputbtn {
+    top: -3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .inputbtn::after {
+    top: 0rem;
+    font-size: 2.6rem;
+  }
+
+  .inputwrap {
+    width: 90%;
+  }
+  .inputwhitewrap {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .inputbtn {
+    top: -3.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .inputbtn::after {
+    top: 0rem;
+    font-size: 2.6rem;
+  }
+
+  .inputwrap {
+    width: 45rem;
+  }
 }

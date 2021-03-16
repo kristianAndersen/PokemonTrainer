@@ -1,0 +1,118 @@
+<div class="container shadow" [style.background]="color">
+
+    <div class="header">
+        <h1>{{pokemon.name}}</h1>
+        <div class="badgesWrap">
+            <div class="badges" *ngFor="let b of badge; let i = index">
+                <img src="{{b}}" alt="Pokemon type badge">
+            </div>
+        </div>
+    </div>
+
+
+ 
+    <div class="imageWrap">
+        <img [src]="pokemon.image">
+        
+    </div>
+    
+    <div class="stats shadow">
+        <h2>Base Stats</h2>
+        <span class="indent">
+        <p>HP {{pokemon.hp}}.
+        Attack {{pokemon.attack}}.
+       Defense {{pokemon.defense}}.
+       Special Attack {{pokemon.special_attack}}.<br>
+       Special Defense {{pokemon.special_defense}}.
+       Speed {{pokemon.speed}}.</p>
+    </span>
+       <h2>Profile</h2>
+       <span class="indent">
+        <p>Base XP: {{pokemon.base_experience}}.
+        Weight {{pokemon.weight}}.
+        Height {{pokemon.height}}.</p>
+    </span>
+
+    <h2>Abilities:</h2>
+    <p >
+        <span class="indent">
+        <span *ngFor="let ability of pokemon.abilities; index as i"> {{ability}} .</span>
+    </span>
+    </p>
+    <div *ngIf="!isCaught" class="collectBtn" (click)="catchPokemon(pokemon)">Collect this pokemon</div>
+    </div>
+
+<div class="moveListWrap">
+    <div class="moveLis">
+        <h2>Moves</h2>
+        <span *ngFor="let move of pokemon.moves; index as i">
+            {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
+        </span>
+    </div>
+ 
+</div>    
+<!--
+
+    <div class="detail-box shadow">
+        <div class="stats">
+            <h2>Base Stats</h2>
+            <table style="padding: 5px;">
+                <tr>
+                    <th>HP</th>
+                    <td>{{pokemon.stats.hp}}</td>
+                </tr>
+                <tr>
+                    <th>Attack</th>
+                    <td>{{pokemon.stats.attack}}</td>
+                </tr>
+                <tr>
+                    <th>Defense</th>
+                    <td>{{pokemon.stats.defense}}</td>
+                </tr>
+                <tr>
+                    <th>Special Attack</th>
+                    <td>{{pokemon.stats.special_attack}}</td>
+                </tr>
+                <tr>
+                    <th>Special Defense</th>
+                    <td>{{pokemon.stats.special_defense}}</td>
+                </tr>
+                <tr>
+                    <th>Speed</th>
+                    <td>{{pokemon.stats.speed}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="stats">
+            <h2>Profile</h2>
+            <table style="padding: 5px;">
+                <tr>
+                    <th>Base XP:</th>
+                    <td>{{pokemon.base_experience}}</td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td>{{pokemon.weight}}</td>
+                </tr>
+                <tr>
+                    <th>Height</th>
+                    <td>{{pokemon.height}}</td>
+                </tr>
+            </table>
+            <h3>Abilities:</h3>
+            <p *ngFor="let ability of pokemon.abilities; index as i">
+                {{ability}}
+            </p>
+        </div>
+        <div class="collectBtn">Collect this pokemon</div>
+    </div>
+    <div class="moveList">
+        <h2>Moves</h2>
+        <span *ngFor="let move of pokemon.moves; index as i">
+            {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
+        </span>
+    </div>
+    
+    
+-->
+</div>

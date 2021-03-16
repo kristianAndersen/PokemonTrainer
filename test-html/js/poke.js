@@ -25,6 +25,27 @@ const colours = {
 	fairy: '#D685AD',
 };
 
+const types = {
+	normal: './images/icons/normal.svg',
+	fire:   './images/icons/fire.svg',
+	water: './images/icons/water.svg',
+	electric: './images/icons/electric.svg',
+	grass:  './images/icons/grass.svg',
+	ice: './images/icons/ice.svg',
+	fighting: './images/icons/fighting.svg',
+	poison: './images/icons/poison.svg',
+	ground: './images/icons/ground.svg',
+	flying: './images/icons/flying.svg',
+	psychic: './images/icons/psychic.svg',
+	bug:  './images/icons/bug.svg',
+	rock: './images/icons/rock.svg',
+	ghost:'./images/icons/ghost.svg',
+	dragon:'./images/icons/dragon.svg',
+	dark:'./images/icons/dark.svg',
+	steel:'./images/icons/steel.svg',
+	fairy:'./images/icons/fairy.svg',
+};
+
 /**
 pokemon cataloug
 card:
@@ -50,19 +71,37 @@ const createElement = (elementTagName, cssClasses) => {
 const createCard = (data) => {
 
   const cardElement = createElement('div', ['card']);
-  const cardMarkup = `
-    <h3 class="card__title">${data.name}</h3>  
+ 
+    
+    let pokeTypeBadge=[]
+    let pokeType=data.types.length
+
+    if(pokeType===2){
+       
+        pokeTypeBadge.push('<img src="'+types[data.types[0].type.name]+'" style="background:"></img>'+'<img src="'+types[data.types[1].type.name]+'"></img>')
+       
+        cardElement.style.background =
+        "linear-gradient(to bottom," +
+        colours[data.types[0].type.name] +
+        " 40%," +
+        colours[data.types[1].type.name] +
+        " 100%)";
+
+    }else{
+        pokeTypeBadge.push('<img src="'+types[data.types[0].type.name]+'"></img>')
+        cardElement.style.background = colours[data.types[0].type.name];
+    }
+   
+    const cardMarkup = `
+    <h3 class="card_title">${data.name}</h3>
+    <div class="poke_typeBadge">
+       ${pokeTypeBadge}
+    </div>  
     <div class="poke_image">
         <img src=${data.sprites.other.dream_world.front_default}></img>
     </div>`
 
     cardElement.innerHTML = cardMarkup;  
-  
-    //set bagkground color by type
-    const filteredByKey = Object.fromEntries( Object.entries(colours).filter(([key, value]) => key === `${data.types[0].type.name}`) )
-    let bgColor=filteredByKey[`${data.types[0].type.name}`]
-    cardElement.style.setProperty("background",bgColor);//.style.setProperty("background-color",`${data.types[0].type.name}`)
-    
     return cardElement;
 }
 
