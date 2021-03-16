@@ -12,6 +12,7 @@ export class AppHeaderComponent {
   name: string | null = null;
   trainerMode: boolean = false;
 
+  //logout button
   logOut() {
     this.name = null;
     this.userService.logOut();

@@ -25,8 +25,10 @@ export class PokemonDetailComponent implements OnInit {
     this.isCaught = this.userService.checkIfCaught(this.pokemon);
   }
 
+  // if detail page is reached from Pokemon cataloug get data from state
   pokemon = this.router.getCurrentNavigation()?.extras.state as PokemonData;
   isCaught: boolean = false;
+  // get pokemon id from route param
   pokemonId = this.route.snapshot.paramMap.get('id') as string;
 
   badge: Array<String> = ['hep', 'pep'];
@@ -38,6 +40,8 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // if if detail page is reached via direct url input use pokemonId from url
+    // to load the pokemon data
     if (this.pokemon === undefined) {
       this.pokemonDetailService
         .getPokemon(Number(this.pokemonId))

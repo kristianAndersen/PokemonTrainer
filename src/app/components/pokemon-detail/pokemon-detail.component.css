@@ -22,6 +22,8 @@ span{
   height: 100%;
 }
 .container {
+  display: block;
+  position: relative;
   margin: 0 auto;
   width: 75%;
   min-height: 80%;
@@ -61,15 +63,18 @@ span{
   position: relative;
   display: flex;
   justify-content: center;
-  min-height: 50%;
   width: 50%;
+  height:23.0rem;
   float: left;
   margin-left: 2%;
+
 }
 .imageWrap img{
+  width: 100%;
   height: auto;
-  width: auto;
-  position: relative;
+  margin: 0 auto;
+  filter: drop-shadow(1rem -0.9rem 0.4rem rgba(0, 0, 0, .2));
+
 }
 
 

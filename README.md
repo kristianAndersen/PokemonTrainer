@@ -7,8 +7,8 @@ Project scope:
 - use the [pokeapi](https://pokeapi.co/) to display pokemons with their avatars.
 - a view where the user is able to input their trainer name.
 - a view that displays a "card style" pokemon cataloge.
-- a view that shows detailed information about the selected Pokemon
-- a view that shows the trainers selected pokemons
+- a view that shows detailed information about the selected Pokemon.
+- a view that shows the trainers selected pokemons.
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
