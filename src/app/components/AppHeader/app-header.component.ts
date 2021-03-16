@@ -10,7 +10,8 @@ import { UserService } from '../../services/user.service';
 export class AppHeaderComponent {
   constructor(private router: Router, private userService: UserService) {}
   name: string | null = null;
-
+ 
+  //logout button
   logOut() {
     this.name = null;
     this.userService.logOut();

@@ -21,12 +21,10 @@ export class PokemonCardComponent implements OnInit{
 
   @Input() pokemon: any;
 
-  @Output() showMeThePokemon: EventEmitter<any> = new EventEmitter();
 
   onClick(pokemon: PokemonData) {
      this.id = pokemon.id;
     // move to detail and pass id
-     this.showMeThePokemon.emit(pokemon);
      this.router.navigate([`/pokemon/${this.id}`], { state: pokemon });
 
   }
