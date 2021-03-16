@@ -1,8 +1,6 @@
 # Pokemon yo
 
-A simple Pokédex built with Angular 11 and TypeScript.
-
-Team: Dan Tomicic & Kristian Andersen
+### Team: Dan Tomicic & Kristian Andersen
 
 A simple Pokédex built with Angular 11 and TypeScript.
 
