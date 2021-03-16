@@ -14,7 +14,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   styleUrls: ['./pokemon-detail.component.css'],
 })
 export class PokemonDetailComponent implements OnInit {
-  @Input()  badge: Array<String> = ['hep', 'pep'];
+
 
 
   constructor(
@@ -27,27 +27,24 @@ export class PokemonDetailComponent implements OnInit {
   pokemon = this.router.getCurrentNavigation()?.extras.state as PokemonData;
   pokemonId = this.route.snapshot.paramMap.get('id') as string;
 
+  badge: Array<String> = ['hep', 'pep'];
   color: string = '#FFFFFF';
- 
 
   ngOnInit(): void {
 
-    console.log(this.pokemon)
-
     if (this.pokemon === undefined) {
-      console.log('cow')
       this.pokemonDetailService.getPokemon(Number(this.pokemonId)).subscribe(
         pokemon => {
           this.pokemon = pokemon;
-          //quick fix
+          // quick fix
           this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
           this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
         });
 
+    }else{
+      this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
+      this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
     }
-
-    this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
-    this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
   }
 }
 

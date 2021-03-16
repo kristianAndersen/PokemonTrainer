@@ -1,3 +1,21 @@
+h1 {
+  font-family: 'pokemon';
+  letter-spacing: 0.3rem;
+  font-size: 3rem;
+  position: relative;
+  float: left;
+  margin-left: 25%;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem;
+}
+span{
+  font-family: 'Roboto', sans-serif;
+}
+
 .wrap{
   display: block;
   width: 100%;
@@ -5,81 +23,55 @@
 }
 .container {
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 350px;
-  min-height: 500px;
   width: 75%;
-  height: 100%;
+  min-height: 80%;
   border: 1px solid transparent;
   border-radius: 8px;
   color: white;
 
 }
-
-.moveList {
-  text-align: center;
-  padding: 5px;
-}
-
-table {
-  font-size: large;
-  color: white;
-  width: 100%;
-  margin: 0 auto; /* or margin: 0 auto 0 auto */
-}
-th {
-  text-align: left;
-}
-
-table #child2 {
-  background: cyan;
-  table-layout: fixed;
-  width: 100%;
-}
-table#child2 td {
-  white-space: normal;
-  word-wrap: break-word;
-}
-td {
-  border: 2px solid purple;
-  border-radius: 8px;
-  padding: 2px;
-}
 .header {
-  width: 100%;
+  padding-top: 1rem;
+  display: block;
+  position: relative;
   text-align: center;
-  align-self: center;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
 }
-h1 {
-  font-family: pokemon;
-  letter-spacing: 0.3rem;
-  font-size: 35px;
-  margin: 10px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+.moveListWrap{
+  clear: both;
+  padding: 1rem;
+  position: relative;
+  display: block;
+  width: 100%;
+ height: auto;
 }
-h2 {
-  width: 95%;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 5px;
+.moveList {
+  position: relative;
+  display: block;
+  text-align: center;
+  height: auto;
+
 }
+
+
 .imageWrap{
+  position: relative;
   display: flex;
   justify-content: center;
-  height: 70%;
-  width: auto;
+  min-height: 50%;
+  width: 50%;
+  float: left;
+  margin-left: 2%;
 }
 .imageWrap img{
-  height: 90%;
+  height: auto;
   width: auto;
+  position: relative;
 }
-.image {
-  padding: 10px;
-  margin: auto;
-  width: 50%;
-}
+
 
 .detail-box {
   width: 100%;
@@ -89,18 +81,25 @@ h2 {
   text-align: center;
   align-items: center;
   justify-content: center;
+
 }
 .stats {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  background-color: blueviolet;
+  justify-content:flex-start;
+  align-items:flex-start;
+  position: relative;
+  padding: 1rem ;
+  float: left;
+  margin-left: 1%;
+  background-color: var(--pokeblue);
   border: 1px solid blueviolet;
   border-radius: 8px;
   width: 45%;
-  height: 250px;
+  height: 50%;
+}
+.indent{
+  padding-left: 1rem;
 }
 
 .shadow {
@@ -112,10 +111,8 @@ h2 {
 .badgesWrap {
   position: relative;
   display: block;
-  width: 100%;
-  height: 3rem;
-  height: 2.5rem;
-
+  width: 95%;
+  height: 4rem;
 }
 
 .badges {
@@ -124,7 +121,7 @@ h2 {
   height: 100%;
   width: auto;
   float: right;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   margin-bottom: 2rem;
   border-radius: 100%;
 }
@@ -135,4 +132,23 @@ h2 {
   background-color: var(--yellow_dark);
   padding: 0.5rem;
   border-radius: 100%;
+}
+.collectBtn{
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+    color: white;
+    font-family: Pokemon;
+    letter-spacing: 0.2rem;
+    border-radius: 8px;
+    background-color:var(--yellow_dark);
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+.collectBtn:hover{
+  background-color:var(--yellow);
 }

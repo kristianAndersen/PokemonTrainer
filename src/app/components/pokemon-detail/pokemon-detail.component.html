@@ -1,19 +1,57 @@
 <div class="container shadow" [style.background]="color">
+
     <div class="header">
         <h1>{{pokemon.name}}</h1>
         <div class="badgesWrap">
-
             <div class="badges" *ngFor="let b of badge; let i = index">
                 <img src="{{b}}" alt="Pokemon type badge">
             </div>
-
         </div>
-
     </div>
 
+
+ 
     <div class="imageWrap">
         <img [src]="pokemon.image">
+        
     </div>
+    
+    <div class="stats shadow">
+        <h2>Base Stats</h2>
+        <span class="indent">
+        <p>HP {{pokemon.stats.hp}}.
+        Attack {{pokemon.stats.attack}}.
+       Defense {{pokemon.stats.defense}}.
+       Special Attack {{pokemon.stats.special_attack}}.<br>
+       Special Defense {{pokemon.stats.special_defense}}.
+       Speed {{pokemon.stats.speed}}.</p>
+    </span>
+       <h2>Profile</h2>
+       <span class="indent">
+        <p>Base XP: {{pokemon.base_experience}}.
+        Weight {{pokemon.weight}}.
+        Height {{pokemon.height}}.</p>
+    </span>
+
+    <h2>Abilities:</h2>
+    <p >
+        <span class="indent">
+        <span *ngFor="let ability of pokemon.abilities; index as i"> {{ability}} .</span>
+    </span>
+    </p>
+    <div class="collectBtn">Collect this pokemon</div>
+    </div>
+
+<div class="moveListWrap">
+    <div class="moveLis">
+        <h2>Moves</h2>
+        <span *ngFor="let move of pokemon.moves; index as i">
+            {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
+        </span>
+    </div>
+ 
+</div>    
+<!--
 
     <div class="detail-box shadow">
         <div class="stats">
@@ -66,6 +104,7 @@
                 {{ability}}
             </p>
         </div>
+        <div class="collectBtn">Collect this pokemon</div>
     </div>
     <div class="moveList">
         <h2>Moves</h2>
@@ -73,4 +112,7 @@
             {{move}}<span *ngIf="i != pokemon.moves.length-1">,</span>
         </span>
     </div>
+    
+    
+-->
 </div>
