@@ -19,12 +19,12 @@
     <div class="stats shadow">
         <h2>Base Stats</h2>
         <span class="indent">
-        <p>HP {{pokemon.stats.hp}}.
-        Attack {{pokemon.stats.attack}}.
-       Defense {{pokemon.stats.defense}}.
-       Special Attack {{pokemon.stats.special_attack}}.<br>
-       Special Defense {{pokemon.stats.special_defense}}.
-       Speed {{pokemon.stats.speed}}.</p>
+        <p>HP {{pokemon.hp}}.
+        Attack {{pokemon.attack}}.
+       Defense {{pokemon.defense}}.
+       Special Attack {{pokemon.special_attack}}.<br>
+       Special Defense {{pokemon.special_defense}}.
+       Speed {{pokemon.speed}}.</p>
     </span>
        <h2>Profile</h2>
        <span class="indent">
@@ -39,7 +39,7 @@
         <span *ngFor="let ability of pokemon.abilities; index as i"> {{ability}} .</span>
     </span>
     </p>
-    <div class="collectBtn">Collect this pokemon</div>
+    <div *ngIf="!isCaught" class="collectBtn" (click)="catchPokemon(pokemon)">Collect this pokemon</div>
     </div>
 
 <div class="moveListWrap">

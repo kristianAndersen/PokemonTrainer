@@ -4,18 +4,16 @@ import { throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonDetailService {
-
   private api = 'https://pokeapi.co/api/v2/pokemon/';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getPokemon(id: number): Observable<any> {
     return this.http.get<any>(this.api + id).pipe(
-      map(res => {
+      map((res) => {
         res.image = res.sprites.other.dream_world.front_default;
 
         res.types = res.types.map((type: any) => {
@@ -24,11 +22,11 @@ export class PokemonDetailService {
 
         res.stats.forEach((data: any) => {
           if (data.stat.name === 'special-attack') {
-            res.stats.special_attack = data.base_stat;
+            res.special_attack = data.base_stat;
           } else if (data.stat.name === 'special-defense') {
-            res.stats.special_defense = data.base_stat;
+            res.special_defense = data.base_stat;
           } else {
-            res.stats[data.stat.name] = data.base_stat;
+            res[data.stat.name] = data.base_stat;
           }
         });
         res.abilities = res.abilities.map((ability: any) => {
@@ -39,8 +37,7 @@ export class PokemonDetailService {
         });
 
         return res;
-
-      }));
+      })
+    );
   }
 }
-

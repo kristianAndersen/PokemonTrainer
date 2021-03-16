@@ -8,40 +8,38 @@ import { PokemonData } from '../model/PokemonModel';
 export class PokemonApi {
   private api: string = 'https://pokeapi.co/api/v2/pokemon/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   pokemons: PokemonData[] = [];
 
-  getPokemons(pokemonAmount:number, detail:boolean): PokemonData[] {
+  getPokemons(pokemonAmount: number, detail: boolean): PokemonData[] {
     if (this.pokemons.length === 0) {
-
-      if(detail === true){
+      if (detail === true) {
         this.fetchPokemon(pokemonAmount);
-      }else{
+      } else {
         for (let i = 1; i <= pokemonAmount; i++) {
           this.fetchPokemon(i);
-      }
+        }
       }
     }
     return this.pokemons;
   }
 
-public fetchPokemon(id: number) {
+  public fetchPokemon(id: number) {
     try {
       const data: any = this.http
         .get(this.api + `${id}`)
         .subscribe((res: any) => {
-
           res.image = res.sprites.other.dream_world.front_default;
           res.types = res.types.map((type: any) => {
             return type.type.name;
           });
           res.stats.forEach((data: any) => {
             if (data.stat.name === 'special-attack') {
-              res.stats.special_attack = data.base_stat;
+              res.special_attack = data.base_stat;
             } else if (data.stat.name === 'special-defense') {
-              res.stats.special_defense = data.base_stat;
+              res.special_defense = data.base_stat;
             } else {
-              res.stats[data.stat.name] = data.base_stat;
+              res[data.stat.name] = data.base_stat;
             }
           });
           res.abilities = res.abilities.map((ability: any) => {
@@ -58,6 +56,4 @@ public fetchPokemon(id: number) {
       console.error(`Error occurred: ${error}`);
     }
   }
-
-
 }

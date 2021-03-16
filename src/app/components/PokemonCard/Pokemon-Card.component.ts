@@ -5,16 +5,14 @@ import { TypeColorService } from '../../services/type-color.service';
 import { TypeBadgeService } from '../../services/type-badge.service';
 import { Router } from '@angular/router';
 
-
 @Injectable()
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './Pokemon-Card.component.html',
   styleUrls: ['./Pokemon-Card.component.css'],
 })
-export class PokemonCardComponent implements OnInit{
-
-  id:number=0;  
+export class PokemonCardComponent implements OnInit {
+  id: number = 0;
   color: string = '#FFFFFF';
   types: Array<string> = ['grass', 'poison'];
   badge: Array<string> = ['grass', 'poison'];
@@ -24,11 +22,10 @@ export class PokemonCardComponent implements OnInit{
   @Output() showMeThePokemon: EventEmitter<any> = new EventEmitter();
 
   onClick(pokemon: PokemonData) {
-     this.id = pokemon.id;
+    this.id = pokemon.id;
     // move to detail and pass id
-     this.showMeThePokemon.emit(pokemon);
-     this.router.navigate([`/pokemon/${this.id}`], { state: pokemon });
-
+    this.showMeThePokemon.emit(pokemon);
+    this.router.navigate([`/pokemon/${this.id}`], { state: pokemon });
   }
 
   constructor(
@@ -44,7 +41,6 @@ export class PokemonCardComponent implements OnInit{
     } else {
       this.color = this.typeColorService.getColorFromTypes(this.pokemon.types);
       this.badge = this.typeBadgeService.getBadgeFromTypes(this.pokemon.types);
-
     }
   }
 }

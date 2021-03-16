@@ -17,6 +17,6 @@ export class NameInputComponent {
 
   onSubmit() {
     this.userService.setName(this.name);
-    this.router.navigate(['/grid']);
+    this.router.navigate(['/pokemon']);
   }
 }

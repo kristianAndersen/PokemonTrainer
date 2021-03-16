@@ -6,12 +6,8 @@ export interface PokemonData {
   moves: Array<string>;
   image: string;
   base_experience: number;
-  stats: Stats;
   types: Array<string>;
   id: number;
-}
-
-interface Stats {
   hp: number;
   attack: number;
   defense: number;

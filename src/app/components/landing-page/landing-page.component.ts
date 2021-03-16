@@ -15,7 +15,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getName().subscribe((name: string | null) => {
       if (name) {
-        this.router.navigate(['/grid']);
+        this.router.navigate(['/pokemon']);
       }
     });
   }

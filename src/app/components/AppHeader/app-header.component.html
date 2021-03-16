@@ -1,4 +1,5 @@
 <header>
     <h1 class="h1Class">welcome to pokemon yo</h1>
     <button *ngIf="name" class="btn" type="button" (click)="logOut()">Log out</button>
+    <button *ngIf="name" class="btn" type="button" style="right: 500px" (click)="trainerMode = !trainerMode" (click)="toggleTrainerMode()" >Your pokemon</button>
 </header>
